@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Direct2d.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ManualCoef0" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">-10.88</Value>
+    </Setting>
+    <Setting Name="ManualCoef1" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">4059000000000</Value>
+    </Setting>
+    <Setting Name="ManualCoef2" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">-2.78E+23</Value>
+    </Setting>
+    <Setting Name="ManualCoef3" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1.406E+34</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

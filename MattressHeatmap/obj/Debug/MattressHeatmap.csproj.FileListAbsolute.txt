@@ -1,0 +1,120 @@
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.SuggestedBindingRedirects.cache
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\work\MattressHeatmap\Old Version\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.SuggestedBindingRedirects.cache
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormDirect2D.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.dll
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.dll
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.dll
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.xml
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.xml
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.xml
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRange.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmBluetooth.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\Windows.winmd
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormShowText.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmDevelopment.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSerialConnection.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSampling.resources
+C:\work\MattressHeatmap\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRanges.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.dll
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.dll
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.dll
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.xml
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.xml
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.xml
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormDirect2D.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormShowText.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmBluetooth.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmDevelopment.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSampling.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSerialConnection.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRange.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRanges.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\Users\AsafBrosh\Desktop\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormDirect2D.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormShowText.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmBluetooth.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmDevelopment.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSampling.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSerialConnection.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRange.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRanges.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.dll
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.dll
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.dll
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.xml
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.xml
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.xml
+C:\Job\MattressHeatmap_2023_08_16b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.dll
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.dll
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.dll
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.xml
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.xml
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.xml
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormDirect2D.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormShowText.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmBluetooth.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmDevelopment.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSampling.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSerialConnection.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRange.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRanges.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb

@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MattressHeatmap.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ManualCoef0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-10.88</Value>
+    </Setting>
+    <Setting Name="ManualCoef1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4059000000000</Value>
+    </Setting>
+    <Setting Name="ManualCoef2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-2.78E+23</Value>
+    </Setting>
+    <Setting Name="ManualCoef3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.406E+34</Value>
+    </Setting>
+    <Setting Name="ControlServiceName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AlertNotificationService</Value>
+    </Setting>
+    <Setting Name="CommandCharacteristicName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10911</Value>
+    </Setting>
+    <Setting Name="ResponseCharacteristicName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Report</Value>
+    </Setting>
+    <Setting Name="DataCharacteristicName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ReportMap</Value>
+    </Setting>
+    <Setting Name="CsvFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="SamplingFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="DevelopmentDefaultA" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DevelopmentDefaultB" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DevelopmentDefaultC" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
