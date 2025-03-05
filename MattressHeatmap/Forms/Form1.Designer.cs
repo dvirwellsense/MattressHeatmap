@@ -84,14 +84,14 @@
             this.lblRowsCount = new System.Windows.Forms.Label();
             this.lblDataQueueSiize = new System.Windows.Forms.Label();
             this.panelColorRanges = new System.Windows.Forms.Panel();
-            this.ucColorRangesPressures = new MattressHeatmap.ucColorRanges();
-            this.ucColorRangesCaps = new MattressHeatmap.ucColorRanges();
             this.label22 = new System.Windows.Forms.Label();
             this.btnSimulate = new System.Windows.Forms.Button();
             this.btnToggleBlur = new System.Windows.Forms.Button();
             this.checkTau = new System.Windows.Forms.CheckBox();
             this.numTau = new System.Windows.Forms.NumericUpDown();
             this.ucHeatMapMain = new MattressHeatmap.ucHeatMap();
+            this.ucColorRangesPressures = new MattressHeatmap.ucColorRanges();
+            this.ucColorRangesCaps = new MattressHeatmap.ucColorRanges();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
@@ -273,7 +273,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(48, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 32);
+            this.label1.Size = new System.Drawing.Size(227, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Input Generation";
             // 
@@ -406,6 +406,7 @@
             this.btnStream.TabIndex = 15;
             this.btnStream.Text = "Connect With Serial";
             this.btnStream.UseVisualStyleBackColor = true;
+            this.btnStream.Visible = false;
             this.btnStream.Click += new System.EventHandler(this.btnStream_Click);
             // 
             // txtRawSerialData
@@ -424,7 +425,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label11.Location = new System.Drawing.Point(665, 325);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 22);
+            this.label11.Size = new System.Drawing.Size(104, 24);
             this.label11.TabIndex = 18;
             this.label11.Text = "Buffer Size:";
             this.label11.Visible = false;
@@ -435,7 +436,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label12.Location = new System.Drawing.Point(665, 362);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 22);
+            this.label12.Size = new System.Drawing.Size(117, 24);
             this.label12.TabIndex = 19;
             this.label12.Text = "Rows Count:";
             this.label12.Visible = false;
@@ -450,7 +451,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label14.Location = new System.Drawing.Point(665, 287);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(112, 22);
+            this.label14.Size = new System.Drawing.Size(116, 24);
             this.label14.TabIndex = 22;
             this.label14.Text = "Data Queue:";
             this.label14.Visible = false;
@@ -464,6 +465,7 @@
             this.btnConnectWithBluetooth.TabIndex = 32;
             this.btnConnectWithBluetooth.Text = "Connect With Bluetooth";
             this.btnConnectWithBluetooth.UseVisualStyleBackColor = true;
+            this.btnConnectWithBluetooth.Visible = false;
             this.btnConnectWithBluetooth.Click += new System.EventHandler(this.btnConnectWithBluetooth_Click);
             // 
             // panelManualLut
@@ -509,7 +511,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label7.Location = new System.Drawing.Point(524, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 22);
+            this.label7.Size = new System.Drawing.Size(92, 24);
             this.label7.TabIndex = 37;
             this.label7.Text = "Com port:";
             // 
@@ -520,7 +522,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label8.Location = new System.Drawing.Point(522, 68);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(2, 24);
+            this.label8.Size = new System.Drawing.Size(2, 26);
             this.label8.TabIndex = 38;
             // 
             // lblCaps
@@ -615,7 +617,6 @@
             // 
             // timerSerialConnection
             // 
-            this.timerSerialConnection.Enabled = true;
             this.timerSerialConnection.Interval = 2000;
             this.timerSerialConnection.Tick += new System.EventHandler(this.timerSerialConnection_Tick);
             // 
@@ -671,7 +672,7 @@
             this.lblBufferSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblBufferSize.Location = new System.Drawing.Point(7, 318);
             this.lblBufferSize.Name = "lblBufferSize";
-            this.lblBufferSize.Size = new System.Drawing.Size(0, 22);
+            this.lblBufferSize.Size = new System.Drawing.Size(0, 24);
             this.lblBufferSize.TabIndex = 20;
             this.lblBufferSize.Visible = false;
             // 
@@ -681,7 +682,7 @@
             this.lblRowsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblRowsCount.Location = new System.Drawing.Point(7, 355);
             this.lblRowsCount.Name = "lblRowsCount";
-            this.lblRowsCount.Size = new System.Drawing.Size(0, 22);
+            this.lblRowsCount.Size = new System.Drawing.Size(0, 24);
             this.lblRowsCount.TabIndex = 21;
             this.lblRowsCount.Visible = false;
             // 
@@ -691,7 +692,7 @@
             this.lblDataQueueSiize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblDataQueueSiize.Location = new System.Drawing.Point(7, 280);
             this.lblDataQueueSiize.Name = "lblDataQueueSiize";
-            this.lblDataQueueSiize.Size = new System.Drawing.Size(0, 22);
+            this.lblDataQueueSiize.Size = new System.Drawing.Size(0, 24);
             this.lblDataQueueSiize.TabIndex = 23;
             this.lblDataQueueSiize.Visible = false;
             // 
@@ -710,22 +711,6 @@
             this.panelColorRanges.Name = "panelColorRanges";
             this.panelColorRanges.Size = new System.Drawing.Size(396, 872);
             this.panelColorRanges.TabIndex = 33;
-            // 
-            // ucColorRangesPressures
-            // 
-            this.ucColorRangesPressures.Location = new System.Drawing.Point(4, 434);
-            this.ucColorRangesPressures.Name = "ucColorRangesPressures";
-            this.ucColorRangesPressures.Size = new System.Drawing.Size(391, 415);
-            this.ucColorRangesPressures.TabIndex = 53;
-            this.ucColorRangesPressures.Type = MattressHeatmap.HeatMapType.Pressures;
-            // 
-            // ucColorRangesCaps
-            // 
-            this.ucColorRangesCaps.Location = new System.Drawing.Point(3, 3);
-            this.ucColorRangesCaps.Name = "ucColorRangesCaps";
-            this.ucColorRangesCaps.Size = new System.Drawing.Size(387, 425);
-            this.ucColorRangesCaps.TabIndex = 52;
-            this.ucColorRangesCaps.Type = MattressHeatmap.HeatMapType.Caps;
             // 
             // label22
             // 
@@ -815,13 +800,29 @@
             this.ucHeatMapMain.Name = "ucHeatMapMain";
             this.ucHeatMapMain.ranges = new string[0];
             this.ucHeatMapMain.ScaleMultiplier = 1D;
-            this.ucHeatMapMain.Size = new System.Drawing.Size(574, 277);
+            this.ucHeatMapMain.Size = new System.Drawing.Size(586, 283);
             this.ucHeatMapMain.SmoothImage = false;
             this.ucHeatMapMain.StartChar = '<';
             this.ucHeatMapMain.StretchDirection = MattressHeatmap.StretchDirection.Vertical;
             this.ucHeatMapMain.StretchToMaxMode = false;
             this.ucHeatMapMain.TabIndex = 14;
             this.ucHeatMapMain.ValueSeperatorChar = ',';
+            // 
+            // ucColorRangesPressures
+            // 
+            this.ucColorRangesPressures.Location = new System.Drawing.Point(4, 434);
+            this.ucColorRangesPressures.Name = "ucColorRangesPressures";
+            this.ucColorRangesPressures.Size = new System.Drawing.Size(391, 415);
+            this.ucColorRangesPressures.TabIndex = 53;
+            this.ucColorRangesPressures.Type = MattressHeatmap.HeatMapType.Pressures;
+            // 
+            // ucColorRangesCaps
+            // 
+            this.ucColorRangesCaps.Location = new System.Drawing.Point(3, 3);
+            this.ucColorRangesCaps.Name = "ucColorRangesCaps";
+            this.ucColorRangesCaps.Size = new System.Drawing.Size(387, 425);
+            this.ucColorRangesCaps.TabIndex = 52;
+            this.ucColorRangesCaps.Type = MattressHeatmap.HeatMapType.Caps;
             // 
             // Form1
             // 

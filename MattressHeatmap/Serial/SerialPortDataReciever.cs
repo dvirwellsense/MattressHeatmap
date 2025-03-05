@@ -450,11 +450,11 @@ namespace MattressHeatmap
                 int n1 = developmentBuffer.IndexOf("Row1");
                 if (n1 >= 0)
                 {
-                    n2 = developmentBuffer.IndexOf("\r\n\r\n", n1-2 );
+                    n2 = developmentBuffer.IndexOf("\r\n\r\n", n1 - 2);
                 }
                 if (n2 >= 0)
                 {
-                    currentMate = developmentBuffer.Substring(n1 , n2 - n1 );
+                    currentMate = developmentBuffer.Substring(n1, n2 - n1);
                     var d = developmentBuffer.Substring(n2 - 10);
                     developmentBuffer = d;
                 }
@@ -477,9 +477,58 @@ namespace MattressHeatmap
             }
             finally
             {
-                Global.IsParseBusy = false ;
+                Global.IsParseBusy = false;
             }
         }
+
+        //private void ParseDevelopmentData()
+        //{
+        //    Global.IsParseBusy = true;
+        //    try
+        //    {
+        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
+
+        //        if (developmentBuffer.Length > 200000)
+        //        {
+        //            developmentBuffer = "";
+        //            return;
+        //        }
+
+        //        string[] lines = developmentBuffer.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+        //        List<DevelopmentDataRow> rows = new List<DevelopmentDataRow>();
+        //        Dictionary<string, string> metadata = new Dictionary<string, string>();
+
+        //        foreach (string line in lines)
+        //        {
+        //            if (line.StartsWith("Row"))
+        //            {
+        //                rows.Add(new DevelopmentDataRow(line));
+        //            }
+        //            else if (line.Contains(",")) // Likely a metadata line
+        //            {
+        //                string[] parts = line.Split(new[] { ',' }, 2);
+        //                if (parts.Length == 2)
+        //                {
+        //                    metadata[parts[0].Trim()] = parts[1].Trim();
+        //                }
+        //            }
+        //        }
+
+        //        // Now you have:
+        //        // - `rows`: a list of parsed row data
+        //        // - `metadata`: a dictionary containing key-value pairs of metadata
+
+        //        ParseDevelopmentRows(rows);
+        //        //ProcessMetadata(metadata); // Implement this function to handle metadata if needed
+
+        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString());
+        //    }
+        //    finally
+        //    {
+        //        Global.IsParseBusy = false;
+        //    }
+        //}
+
 
         private void ParseDevelopmentData2()
         {

@@ -118,3 +118,29 @@ C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\Mat
 C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
 C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
 C:\Job\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe.config
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.exe
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\MattressHeatmap.pdb
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.dll
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.dll
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.dll
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.xml
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Imaging.xml
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\bin\Debug\AForge.Math.xml
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.AssemblyReference.cache
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Form1.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormDirect2D.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.FormShowText.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmBluetooth.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmDevelopment.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSampling.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.frmSerialConnection.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.Properties.Resources.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRange.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucColorRanges.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.ucHeatMap.resources
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.GenerateResource.cache
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CoreCompileInputs.cache
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.csproj.CopyComplete
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.exe
+C:\Users\dvirs\OneDrive - Wellsense inc\Desktop\GUI projects\MattressHeatmap\MattressHeatmap_2024_12_15b\MattressHeatmap\MattressHeatmap\obj\Debug\MattressHeatmap.pdb
