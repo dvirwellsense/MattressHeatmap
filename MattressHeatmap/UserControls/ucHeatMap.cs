@@ -121,12 +121,15 @@ namespace MattressHeatmap
         public delegate void EventHandler_ConnectionType(ConnectionType connectionType);
         public delegate void EventHandler_Frame(Frame frame);
         public delegate void EventHandler_Void();
+        public delegate void EventHandler_Meta(double[,] metadata);
 
         public event EventHandler_Size SizeChanged_Event;
         public event EventHandler_ConnectionType ConnectionTypeChanged_Event;
         public event EventHandler_Void GotBluetoothDetails_Event;
         public event EventHandler_Frame SelectedFrameArrived_Event;
         public event EventHandler_Void SerialPortClosed_Event;
+        public event EventHandler_Meta MetaArrived_Event;
+
 
         public string[] ranges
         {
@@ -257,6 +260,7 @@ namespace MattressHeatmap
 
             serialPortDataReciever = new SerialPortDataReciever(ComPort);
             serialPortDataReciever.DataArrived_Event += SerialPortDataReciever_DataArrived_Event;
+            serialPortDataReciever.MetaArrived_Event += SerialPortDataReciever_MetaArrived_Event;
             serialPortDataReciever.PortClosed_Event += SerialPortDataReciever_PortClosed_Event;
 
             bluetoothDataProcessor = new BluetoothDataProcessor();
@@ -298,6 +302,19 @@ namespace MattressHeatmap
             else SetNewInputArray(PerformOffset(data));
             if (serialPortDataReciever.IsInProgress()) SetConnectionType(ConnectionType.Serial);
         }
+
+        private void SerialPortDataReciever_MetaArrived_Event(double[,] metadata)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new SerialPortDataReciever.EventHandler_Meta(SerialPortDataReciever_MetaArrived_Event), new object[] { metadata });
+                return;
+            }
+
+            // Raise the event so Form1 can listen to it
+            MetaArrived_Event?.Invoke(metadata);
+        }
+
 
         public void SetNewInput(string newInput)
         {

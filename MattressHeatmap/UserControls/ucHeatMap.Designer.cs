@@ -42,9 +42,9 @@
             // 
             this.picHeatMap.BackColor = System.Drawing.Color.White;
             this.picHeatMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picHeatMap.Location = new System.Drawing.Point(0, 0);
+            this.picHeatMap.Location = new System.Drawing.Point(3, 0);
             this.picHeatMap.Name = "picHeatMap";
-            this.picHeatMap.Size = new System.Drawing.Size(337, 317);
+            this.picHeatMap.Size = new System.Drawing.Size(337, 312);
             this.picHeatMap.TabIndex = 5;
             this.picHeatMap.TabStop = false;
             this.picHeatMap.Paint += new System.Windows.Forms.PaintEventHandler(this.picHeatMap_Paint);
@@ -69,9 +69,9 @@
             this.picHeatmapPressure.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picHeatmapPressure.BackColor = System.Drawing.Color.White;
             this.picHeatmapPressure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picHeatmapPressure.Location = new System.Drawing.Point(343, 3);
+            this.picHeatmapPressure.Location = new System.Drawing.Point(346, 0);
             this.picHeatmapPressure.Name = "picHeatmapPressure";
-            this.picHeatmapPressure.Size = new System.Drawing.Size(362, 314);
+            this.picHeatmapPressure.Size = new System.Drawing.Size(371, 312);
             this.picHeatmapPressure.TabIndex = 6;
             this.picHeatmapPressure.TabStop = false;
             this.picHeatmapPressure.MouseLeave += new System.EventHandler(this.picHeatmapPressure_MouseLeave);
@@ -90,7 +90,7 @@
             this.Controls.Add(this.picHeatmapPressure);
             this.Controls.Add(this.picHeatMap);
             this.Name = "ucHeatMap";
-            this.Size = new System.Drawing.Size(708, 345);
+            this.Size = new System.Drawing.Size(726, 318);
             this.Load += new System.EventHandler(this.ucHeatMap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picHeatMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeatmapPressure)).EndInit();

@@ -84,14 +84,32 @@
             this.lblRowsCount = new System.Windows.Forms.Label();
             this.lblDataQueueSiize = new System.Windows.Forms.Label();
             this.panelColorRanges = new System.Windows.Forms.Panel();
+            this.ucColorRangesPressures = new MattressHeatmap.ucColorRanges();
+            this.ucColorRangesCaps = new MattressHeatmap.ucColorRanges();
             this.label22 = new System.Windows.Forms.Label();
             this.btnSimulate = new System.Windows.Forms.Button();
             this.btnToggleBlur = new System.Windows.Forms.Button();
             this.checkTau = new System.Windows.Forms.CheckBox();
             this.numTau = new System.Windows.Forms.NumericUpDown();
             this.ucHeatMapMain = new MattressHeatmap.ucHeatMap();
-            this.ucColorRangesPressures = new MattressHeatmap.ucColorRanges();
-            this.ucColorRangesCaps = new MattressHeatmap.ucColorRanges();
+            this.Status_text = new System.Windows.Forms.TextBox();
+            this.Frame_text = new System.Windows.Forms.TextBox();
+            this.MatNum_text = new System.Windows.Forms.TextBox();
+            this.LifeTime_text = new System.Windows.Forms.TextBox();
+            this.Status = new System.Windows.Forms.Label();
+            this.Frame = new System.Windows.Forms.Label();
+            this.MatNum = new System.Windows.Forms.Label();
+            this.LifeTime = new System.Windows.Forms.Label();
+            this.Temp_text = new System.Windows.Forms.TextBox();
+            this.Humidity_text = new System.Windows.Forms.TextBox();
+            this.Row_text = new System.Windows.Forms.TextBox();
+            this.Columns_text = new System.Windows.Forms.TextBox();
+            this.Temp = new System.Windows.Forms.Label();
+            this.Humidity = new System.Windows.Forms.Label();
+            this.Rows = new System.Windows.Forms.Label();
+            this.Columns = new System.Windows.Forms.Label();
+            this.FW_Version_text = new System.Windows.Forms.TextBox();
+            this.FW_Version = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
@@ -129,7 +147,7 @@
             this.panel1.Controls.Add(this.numPressurePoints);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(250, 889);
+            this.panel1.Location = new System.Drawing.Point(836, 889);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 412);
             this.panel1.TabIndex = 6;
@@ -653,7 +671,7 @@
             // 
             this.btnSample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSample.Location = new System.Drawing.Point(629, 810);
+            this.btnSample.Location = new System.Drawing.Point(1215, 810);
             this.btnSample.Name = "btnSample";
             this.btnSample.Size = new System.Drawing.Size(213, 50);
             this.btnSample.TabIndex = 49;
@@ -707,10 +725,26 @@
             this.panelColorRanges.Controls.Add(this.lblBufferSize);
             this.panelColorRanges.Controls.Add(this.txtRawSerialData);
             this.panelColorRanges.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelColorRanges.Location = new System.Drawing.Point(848, 0);
+            this.panelColorRanges.Location = new System.Drawing.Point(1434, 0);
             this.panelColorRanges.Name = "panelColorRanges";
             this.panelColorRanges.Size = new System.Drawing.Size(396, 872);
             this.panelColorRanges.TabIndex = 33;
+            // 
+            // ucColorRangesPressures
+            // 
+            this.ucColorRangesPressures.Location = new System.Drawing.Point(4, 434);
+            this.ucColorRangesPressures.Name = "ucColorRangesPressures";
+            this.ucColorRangesPressures.Size = new System.Drawing.Size(391, 415);
+            this.ucColorRangesPressures.TabIndex = 53;
+            this.ucColorRangesPressures.Type = MattressHeatmap.HeatMapType.Pressures;
+            // 
+            // ucColorRangesCaps
+            // 
+            this.ucColorRangesCaps.Location = new System.Drawing.Point(3, 3);
+            this.ucColorRangesCaps.Name = "ucColorRangesCaps";
+            this.ucColorRangesCaps.Size = new System.Drawing.Size(387, 425);
+            this.ucColorRangesCaps.TabIndex = 52;
+            this.ucColorRangesCaps.Type = MattressHeatmap.HeatMapType.Caps;
             // 
             // label22
             // 
@@ -725,7 +759,7 @@
             // 
             this.btnSimulate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSimulate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSimulate.Location = new System.Drawing.Point(743, 754);
+            this.btnSimulate.Location = new System.Drawing.Point(1329, 754);
             this.btnSimulate.Name = "btnSimulate";
             this.btnSimulate.Size = new System.Drawing.Size(99, 50);
             this.btnSimulate.TabIndex = 50;
@@ -737,7 +771,7 @@
             // 
             this.btnToggleBlur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnToggleBlur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnToggleBlur.Location = new System.Drawing.Point(459, 810);
+            this.btnToggleBlur.Location = new System.Drawing.Point(1045, 810);
             this.btnToggleBlur.Name = "btnToggleBlur";
             this.btnToggleBlur.Size = new System.Drawing.Size(59, 50);
             this.btnToggleBlur.TabIndex = 51;
@@ -751,7 +785,7 @@
             this.checkTau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkTau.AutoSize = true;
             this.checkTau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkTau.Location = new System.Drawing.Point(466, 827);
+            this.checkTau.Location = new System.Drawing.Point(1052, 827);
             this.checkTau.Name = "checkTau";
             this.checkTau.Size = new System.Drawing.Size(64, 24);
             this.checkTau.TabIndex = 52;
@@ -769,7 +803,7 @@
             0,
             0,
             65536});
-            this.numTau.Location = new System.Drawing.Point(536, 824);
+            this.numTau.Location = new System.Drawing.Point(1122, 824);
             this.numTau.Maximum = new decimal(new int[] {
             1,
             0,
@@ -800,7 +834,7 @@
             this.ucHeatMapMain.Name = "ucHeatMapMain";
             this.ucHeatMapMain.ranges = new string[0];
             this.ucHeatMapMain.ScaleMultiplier = 1D;
-            this.ucHeatMapMain.Size = new System.Drawing.Size(586, 283);
+            this.ucHeatMapMain.Size = new System.Drawing.Size(770, 375);
             this.ucHeatMapMain.SmoothImage = false;
             this.ucHeatMapMain.StartChar = '<';
             this.ucHeatMapMain.StretchDirection = MattressHeatmap.StretchDirection.Vertical;
@@ -808,27 +842,191 @@
             this.ucHeatMapMain.TabIndex = 14;
             this.ucHeatMapMain.ValueSeperatorChar = ',';
             // 
-            // ucColorRangesPressures
+            // Status_text
             // 
-            this.ucColorRangesPressures.Location = new System.Drawing.Point(4, 434);
-            this.ucColorRangesPressures.Name = "ucColorRangesPressures";
-            this.ucColorRangesPressures.Size = new System.Drawing.Size(391, 415);
-            this.ucColorRangesPressures.TabIndex = 53;
-            this.ucColorRangesPressures.Type = MattressHeatmap.HeatMapType.Pressures;
+            this.Status_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Status_text.Location = new System.Drawing.Point(909, 37);
+            this.Status_text.Name = "Status_text";
+            this.Status_text.Size = new System.Drawing.Size(134, 27);
+            this.Status_text.TabIndex = 90;
             // 
-            // ucColorRangesCaps
+            // Frame_text
             // 
-            this.ucColorRangesCaps.Location = new System.Drawing.Point(3, 3);
-            this.ucColorRangesCaps.Name = "ucColorRangesCaps";
-            this.ucColorRangesCaps.Size = new System.Drawing.Size(387, 425);
-            this.ucColorRangesCaps.TabIndex = 52;
-            this.ucColorRangesCaps.Type = MattressHeatmap.HeatMapType.Caps;
+            this.Frame_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Frame_text.Location = new System.Drawing.Point(1086, 37);
+            this.Frame_text.Name = "Frame_text";
+            this.Frame_text.Size = new System.Drawing.Size(134, 27);
+            this.Frame_text.TabIndex = 91;
+            // 
+            // MatNum_text
+            // 
+            this.MatNum_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.MatNum_text.Location = new System.Drawing.Point(909, 98);
+            this.MatNum_text.Name = "MatNum_text";
+            this.MatNum_text.Size = new System.Drawing.Size(134, 27);
+            this.MatNum_text.TabIndex = 92;
+            // 
+            // LifeTime_text
+            // 
+            this.LifeTime_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LifeTime_text.Location = new System.Drawing.Point(1086, 98);
+            this.LifeTime_text.Name = "LifeTime_text";
+            this.LifeTime_text.Size = new System.Drawing.Size(134, 27);
+            this.LifeTime_text.TabIndex = 93;
+            // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Status.Location = new System.Drawing.Point(941, 12);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(74, 25);
+            this.Status.TabIndex = 94;
+            this.Status.Text = "Status:";
+            // 
+            // Frame
+            // 
+            this.Frame.AutoSize = true;
+            this.Frame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Frame.Location = new System.Drawing.Point(1117, 12);
+            this.Frame.Name = "Frame";
+            this.Frame.Size = new System.Drawing.Size(74, 25);
+            this.Frame.TabIndex = 95;
+            this.Frame.Text = "Frame:";
+            // 
+            // MatNum
+            // 
+            this.MatNum.AutoSize = true;
+            this.MatNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.MatNum.Location = new System.Drawing.Point(914, 73);
+            this.MatNum.Name = "MatNum";
+            this.MatNum.Size = new System.Drawing.Size(125, 25);
+            this.MatNum.TabIndex = 96;
+            this.MatNum.Text = "Mat Number:";
+            // 
+            // LifeTime
+            // 
+            this.LifeTime.AutoSize = true;
+            this.LifeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LifeTime.Location = new System.Drawing.Point(1104, 73);
+            this.LifeTime.Name = "LifeTime";
+            this.LifeTime.Size = new System.Drawing.Size(98, 25);
+            this.LifeTime.TabIndex = 97;
+            this.LifeTime.Text = "Life Time:";
+            // 
+            // Temp_text
+            // 
+            this.Temp_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Temp_text.Location = new System.Drawing.Point(909, 157);
+            this.Temp_text.Name = "Temp_text";
+            this.Temp_text.Size = new System.Drawing.Size(134, 27);
+            this.Temp_text.TabIndex = 98;
+            // 
+            // Humidity_text
+            // 
+            this.Humidity_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Humidity_text.Location = new System.Drawing.Point(1086, 157);
+            this.Humidity_text.Name = "Humidity_text";
+            this.Humidity_text.Size = new System.Drawing.Size(134, 27);
+            this.Humidity_text.TabIndex = 99;
+            // 
+            // Row_text
+            // 
+            this.Row_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Row_text.Location = new System.Drawing.Point(1262, 37);
+            this.Row_text.Name = "Row_text";
+            this.Row_text.Size = new System.Drawing.Size(134, 27);
+            this.Row_text.TabIndex = 100;
+            // 
+            // Columns_text
+            // 
+            this.Columns_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Columns_text.Location = new System.Drawing.Point(1262, 98);
+            this.Columns_text.Name = "Columns_text";
+            this.Columns_text.Size = new System.Drawing.Size(134, 27);
+            this.Columns_text.TabIndex = 101;
+            // 
+            // Temp
+            // 
+            this.Temp.AutoSize = true;
+            this.Temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Temp.Location = new System.Drawing.Point(941, 132);
+            this.Temp.Name = "Temp";
+            this.Temp.Size = new System.Drawing.Size(69, 25);
+            this.Temp.TabIndex = 102;
+            this.Temp.Text = "Temp:";
+            // 
+            // Humidity
+            // 
+            this.Humidity.AutoSize = true;
+            this.Humidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Humidity.Location = new System.Drawing.Point(1109, 132);
+            this.Humidity.Name = "Humidity";
+            this.Humidity.Size = new System.Drawing.Size(93, 25);
+            this.Humidity.TabIndex = 103;
+            this.Humidity.Text = "Humidity:";
+            // 
+            // Rows
+            // 
+            this.Rows.AutoSize = true;
+            this.Rows.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Rows.Location = new System.Drawing.Point(1302, 12);
+            this.Rows.Name = "Rows";
+            this.Rows.Size = new System.Drawing.Size(56, 25);
+            this.Rows.TabIndex = 104;
+            this.Rows.Text = "Row:";
+            // 
+            // Columns
+            // 
+            this.Columns.AutoSize = true;
+            this.Columns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Columns.Location = new System.Drawing.Point(1280, 73);
+            this.Columns.Name = "Columns";
+            this.Columns.Size = new System.Drawing.Size(96, 25);
+            this.Columns.TabIndex = 105;
+            this.Columns.Text = "Columns:";
+            // 
+            // FW_Version_text
+            // 
+            this.FW_Version_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.FW_Version_text.Location = new System.Drawing.Point(1262, 157);
+            this.FW_Version_text.Name = "FW_Version_text";
+            this.FW_Version_text.Size = new System.Drawing.Size(134, 27);
+            this.FW_Version_text.TabIndex = 106;
+            // 
+            // FW_Version
+            // 
+            this.FW_Version.AutoSize = true;
+            this.FW_Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.FW_Version.Location = new System.Drawing.Point(1265, 132);
+            this.FW_Version.Name = "FW_Version";
+            this.FW_Version.Size = new System.Drawing.Size(128, 25);
+            this.FW_Version.TabIndex = 107;
+            this.FW_Version.Text = "FW_Version:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 872);
+            this.ClientSize = new System.Drawing.Size(1830, 872);
+            this.Controls.Add(this.FW_Version);
+            this.Controls.Add(this.FW_Version_text);
+            this.Controls.Add(this.Columns);
+            this.Controls.Add(this.Rows);
+            this.Controls.Add(this.Humidity);
+            this.Controls.Add(this.Temp);
+            this.Controls.Add(this.Columns_text);
+            this.Controls.Add(this.Row_text);
+            this.Controls.Add(this.Humidity_text);
+            this.Controls.Add(this.Temp_text);
+            this.Controls.Add(this.LifeTime);
+            this.Controls.Add(this.MatNum);
+            this.Controls.Add(this.Frame);
+            this.Controls.Add(this.Status);
+            this.Controls.Add(this.LifeTime_text);
+            this.Controls.Add(this.MatNum_text);
+            this.Controls.Add(this.Frame_text);
+            this.Controls.Add(this.Status_text);
             this.Controls.Add(this.numTau);
             this.Controls.Add(this.checkTau);
             this.Controls.Add(this.btnToggleBlur);
@@ -949,6 +1147,24 @@
         private System.Windows.Forms.Button btnToggleBlur;
         private System.Windows.Forms.CheckBox checkTau;
         private System.Windows.Forms.NumericUpDown numTau;
+        private System.Windows.Forms.TextBox Status_text;
+        private System.Windows.Forms.TextBox Frame_text;
+        private System.Windows.Forms.TextBox MatNum_text;
+        private System.Windows.Forms.TextBox LifeTime_text;
+        private System.Windows.Forms.Label Status;
+        private System.Windows.Forms.Label Frame;
+        private System.Windows.Forms.Label MatNum;
+        private System.Windows.Forms.Label LifeTime;
+        private System.Windows.Forms.TextBox Temp_text;
+        private System.Windows.Forms.TextBox Humidity_text;
+        private System.Windows.Forms.TextBox Row_text;
+        private System.Windows.Forms.TextBox Columns_text;
+        private System.Windows.Forms.Label Temp;
+        private System.Windows.Forms.Label Humidity;
+        private System.Windows.Forms.Label Rows;
+        private System.Windows.Forms.Label Columns;
+        private System.Windows.Forms.TextBox FW_Version_text;
+        private System.Windows.Forms.Label FW_Version;
     }
 }
 

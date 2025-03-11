@@ -27,7 +27,7 @@ namespace MattressHeatmap
         private StreamInputSimulator streamSimulator;
         private Random rnd;
         private bool isSerialSimulatorRunning;
-        //private SerialPortDataReciever serialPortDataReciever;
+        //private SerialPortDataReciever serialPortReceiver;
         private int heatmapStartLocationX;
         private SerialDeviceStatus serialDeviceStatus;
         private Area samplingArea;
@@ -102,6 +102,9 @@ namespace MattressHeatmap
             ucColorRangesCaps.ColorRangesChanged_Event += UcColorRanges_ColorRangesChanged_Event;
             ucColorRangesPressures.ColorRangesChanged_Event += UcColorRanges_ColorRangesChanged_Event;
 
+            ucHeatMapMain.MetaArrived_Event += UcHeatMapMain_MetaArrived_Event;
+
+
             serialDeviceStatus = SerialDeviceStatus.Unavailable;
 
             //ConnectToDeviceIfAvailable();
@@ -127,6 +130,19 @@ namespace MattressHeatmap
             }
             ucHeatMapMain.SetNewInputArray(data);
         }
+
+        private void UcHeatMapMain_MetaArrived_Event(double[,] metadata)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new ucHeatMap.EventHandler_Meta(UcHeatMapMain_MetaArrived_Event), new object[] { metadata });
+                return;
+            }
+
+            // Update the TextBox in Form1
+            Status_text.Text = metadata[0, 0].ToString();
+        }
+
 
         private void SerialPortDataReciever_RawDataArrived_Event(string value)
         {

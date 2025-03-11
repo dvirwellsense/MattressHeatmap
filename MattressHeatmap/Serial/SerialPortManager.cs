@@ -22,6 +22,7 @@ namespace MattressHeatmap
         //        public event Global.EventHandler_TesterMsg DataArrived_Event;
         public event EventHandler_string SendOutMsg_Event;
         public event EventHandler_string DataArrived_Event;
+        public event EventHandler_string MetaArrived_Event;
         //public event Global.EventHandler_MachineState DataArrived_Event;
         // public event Global.EventHandler_string MessageArrived_Event;
 
@@ -85,6 +86,7 @@ namespace MattressHeatmap
                         nbrDataRead = _serialPort.Read(data, 0, dataLength);
                         msg = System.Text.Encoding.Default.GetString(data);
                         DataArrived_Event?.Invoke(msg);
+                        MetaArrived_Event?.Invoke(msg);
                         //if (RxBuffer.Length > 1000) RxBuffer = "";
                         //if (RxBuffer.Contains('\n'))
                         //{

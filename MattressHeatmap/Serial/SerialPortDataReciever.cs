@@ -12,6 +12,11 @@ namespace MattressHeatmap
 {
     public class SerialPortDataReciever
     {
+        private Form1 form1;
+        public SerialPortDataReciever(Form1 form)
+        {
+            form1 = form;
+        }
         public string ComPort { get; set; }
 
         public SerialPort port { get; set; }
@@ -21,12 +26,15 @@ namespace MattressHeatmap
         public delegate void EventHandler_Void();
         public delegate void EventHandler_String(string value);
         public delegate void EventHandler_Data(double[,] data);
+        public delegate void EventHandler_Meta(double[,] data);
         public delegate void EventHandler_Messages(List<List<byte>> messages);
 
         public event EventHandler_Void PortClosed_Event;
         public event EventHandler_String RawDataArrived_Event;
         public event EventHandler_Data DataArrived_Event;
+        public event EventHandler_Meta MetaArrived_Event;
         public event EventHandler_Messages MessagesArrived_Event;
+
 
         public static object Locker = new object();
 
@@ -90,6 +98,7 @@ namespace MattressHeatmap
             inProgress = false;
 
             serialPortManager.DataArrived_Event += SerialPortManager_DataArrived_Event;
+            serialPortManager.MetaArrived_Event += SerialPortManager_MetaArrived_Event;
         }
 
         public bool Connect(bool isShowMessages)
@@ -224,6 +233,12 @@ namespace MattressHeatmap
             //developmentBuffer += value.Replace("\r\n", "");
 
             //ParseDevelopmentData();
+        }
+
+        private void SerialPortManager_MetaArrived_Event(string value)
+        {
+            developmentBuffer += value.Replace("\0", "");
+            System.Diagnostics.Debug.WriteLine($"developmentBuffer.Length={developmentBuffer.Length}");
         }
 
         public void Stop()
@@ -445,12 +460,44 @@ namespace MattressHeatmap
                     developmentBuffer = "";
                     return;
                 }
+
+                Dictionary<string, string> metadata = new Dictionary<string, string>();
+                int m1 = developmentBuffer.IndexOf("Mat ");
+                int m2 = developmentBuffer.IndexOf("Row1");
+
+                if (m1 >= 0 && m2 > m1)  // אם מצאנו גם את תחילת המטאדאטה וגם את תחילת השורות
+                {
+                    string currentMetadata = developmentBuffer.Substring(m1, m2 - m1);  // כל המטאדאטה
+                    var d = developmentBuffer.Substring(m2);  // השורות והמידע אחרי Row1
+                    developmentBuffer = d;  // עדכן את הבאפר רק עם השורות אחרי המטאדאטה
+
+                    string[] metaStr = currentMetadata.Replace("\r\n", "+").Split('+');
+                    if (metaStr.Length == 0) return;
+
+                    for (int i = 0; i < metaStr.Length-1; i++)
+                    {
+                        string[] parts = metaStr[i].Split(',');
+
+                        if (parts.Length > 1)
+                        {
+                            string key = parts[0].Trim();
+                            string value = string.Join(", ", parts.Skip(1)).Trim();
+                            metadata[key] = value;
+                        }
+                        else 
+                        {
+                            metadata.Clear();
+                            metadata["Mat Status"] = parts[0].Trim();
+                        }
+                    }
+                }
+
                 int n2 = -1;
                 string currentMate = "";
                 int n1 = developmentBuffer.IndexOf("Row1");
                 if (n1 >= 0)
                 {
-                    n2 = developmentBuffer.IndexOf("\r\n\r\n", n1 - 2);
+                    n2 = developmentBuffer.IndexOf("\r\n\r\n");
                 }
                 if (n2 >= 0)
                 {
@@ -472,6 +519,7 @@ namespace MattressHeatmap
                 }
 
                 ParseDevelopmentRows(rows);
+                ParseDevelopmentMeta(metadata);
                 //developmentBuffer = "";
                 System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString());
             }
@@ -480,55 +528,6 @@ namespace MattressHeatmap
                 Global.IsParseBusy = false;
             }
         }
-
-        //private void ParseDevelopmentData()
-        //{
-        //    Global.IsParseBusy = true;
-        //    try
-        //    {
-        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
-
-        //        if (developmentBuffer.Length > 200000)
-        //        {
-        //            developmentBuffer = "";
-        //            return;
-        //        }
-
-        //        string[] lines = developmentBuffer.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-        //        List<DevelopmentDataRow> rows = new List<DevelopmentDataRow>();
-        //        Dictionary<string, string> metadata = new Dictionary<string, string>();
-
-        //        foreach (string line in lines)
-        //        {
-        //            if (line.StartsWith("Row"))
-        //            {
-        //                rows.Add(new DevelopmentDataRow(line));
-        //            }
-        //            else if (line.Contains(",")) // Likely a metadata line
-        //            {
-        //                string[] parts = line.Split(new[] { ',' }, 2);
-        //                if (parts.Length == 2)
-        //                {
-        //                    metadata[parts[0].Trim()] = parts[1].Trim();
-        //                }
-        //            }
-        //        }
-
-        //        // Now you have:
-        //        // - `rows`: a list of parsed row data
-        //        // - `metadata`: a dictionary containing key-value pairs of metadata
-
-        //        ParseDevelopmentRows(rows);
-        //        //ProcessMetadata(metadata); // Implement this function to handle metadata if needed
-
-        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString());
-        //    }
-        //    finally
-        //    {
-        //        Global.IsParseBusy = false;
-        //    }
-        //}
-
 
         private void ParseDevelopmentData2()
         {
@@ -587,6 +586,22 @@ namespace MattressHeatmap
             }
             DataArrived_Event?.Invoke(result);
         }
+
+        private void ParseDevelopmentMeta(Dictionary<string, string> metadata)
+        {
+            Console.WriteLine("Metadata parsed, raising event...");
+            double[,] meta = new double[10, 10];
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    meta[i, j] = i + j;
+                }
+            }
+            MetaArrived_Event?.Invoke(meta);
+            //DataArrived_Event?.Invoke(meta);
+        }
+
 
         private bool CheckDevelopmentRows(List<DevelopmentDataRow> rows)
         {
