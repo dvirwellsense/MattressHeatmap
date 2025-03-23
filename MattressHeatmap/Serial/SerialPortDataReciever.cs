@@ -26,7 +26,7 @@ namespace MattressHeatmap
         public delegate void EventHandler_Void();
         public delegate void EventHandler_String(string value);
         public delegate void EventHandler_Data(double[,] data);
-        public delegate void EventHandler_Meta(double[,] data);
+        public delegate void EventHandler_Meta(List<string> metadata);
         public delegate void EventHandler_Messages(List<List<byte>> messages);
 
         public event EventHandler_Void PortClosed_Event;
@@ -228,7 +228,7 @@ namespace MattressHeatmap
         private void SerialPortManager_DataArrived_Event(string value)
         {
             developmentBuffer += value.Replace("\0", "");
-            System.Diagnostics.Debug.WriteLine($"developmentBuffer.Length={developmentBuffer.Length}");
+            //System.Diagnostics.Debug.WriteLine($"developmentBuffer.Length={developmentBuffer.Length}");
 
             //developmentBuffer += value.Replace("\r\n", "");
 
@@ -238,7 +238,7 @@ namespace MattressHeatmap
         private void SerialPortManager_MetaArrived_Event(string value)
         {
             developmentBuffer += value.Replace("\0", "");
-            System.Diagnostics.Debug.WriteLine($"developmentBuffer.Length={developmentBuffer.Length}");
+            //System.Diagnostics.Debug.WriteLine($"developmentBuffer.Length={developmentBuffer.Length}");
         }
 
         public void Stop()
@@ -450,7 +450,7 @@ namespace MattressHeatmap
             Global.IsParseBusy = true;
             try
             {
-                System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
+                //System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
                 if (developmentBuffer.Length > 8000)
                 {
                     int k = 1;
@@ -460,54 +460,58 @@ namespace MattressHeatmap
                     developmentBuffer = "";
                     return;
                 }
+                //System.Diagnostics.Debug.WriteLine("========================================");
+                //System.Diagnostics.Debug.WriteLine(developmentBuffer);
 
-                Dictionary<string, string> metadata = new Dictionary<string, string>();
-                int m1 = developmentBuffer.IndexOf("Mat ");
-                int m2 = developmentBuffer.IndexOf("Row1");
-
-                if (m1 >= 0 && m2 > m1)  // אם מצאנו גם את תחילת המטאדאטה וגם את תחילת השורות
+                int metaStart = developmentBuffer.IndexOf("Mat ");
+                if (metaStart == -1)
                 {
-                    string currentMetadata = developmentBuffer.Substring(m1, m2 - m1);  // כל המטאדאטה
-                    var d = developmentBuffer.Substring(m2);  // השורות והמידע אחרי Row1
-                    developmentBuffer = d;  // עדכן את הבאפר רק עם השורות אחרי המטאדאטה
-
-                    string[] metaStr = currentMetadata.Replace("\r\n", "+").Split('+');
-                    if (metaStr.Length == 0) return;
-
-                    for (int i = 0; i < metaStr.Length-1; i++)
-                    {
-                        string[] parts = metaStr[i].Split(',');
-
-                        if (parts.Length > 1)
-                        {
-                            string key = parts[0].Trim();
-                            string value = string.Join(", ", parts.Skip(1)).Trim();
-                            metadata[key] = value;
-                        }
-                        else 
-                        {
-                            metadata.Clear();
-                            metadata["Mat Status"] = parts[0].Trim();
-                        }
-                    }
+                    return;
                 }
 
-                int n2 = -1;
+                int metaEnd = developmentBuffer.IndexOf("Row1,", metaStart);
+                if (metaEnd == -1)
+                {
+                    return;
+                }
+
+                int dataStart = metaEnd;
+                int dataEnd = developmentBuffer.IndexOf("\r\n\r\n", dataStart);
+
+                if (dataEnd == -1)
+                {
+                    return;
+                }
                 string currentMate = "";
-                int n1 = developmentBuffer.IndexOf("Row1");
-                if (n1 >= 0)
+                string currentMeta = "";
+                if (dataEnd >= 0)
                 {
-                    n2 = developmentBuffer.IndexOf("\r\n\r\n");
-                }
-                if (n2 >= 0)
-                {
-                    currentMate = developmentBuffer.Substring(n1, n2 - n1);
-                    var d = developmentBuffer.Substring(n2 - 10);
+                    currentMeta = developmentBuffer.Substring(metaStart, metaEnd - metaStart);
+                    currentMate = developmentBuffer.Substring(dataStart, dataEnd - dataStart);
+                    var d = developmentBuffer.Substring(dataEnd - 10);
                     developmentBuffer = d;
                 }
                 if (currentMate == "") return;
-                //string[] mats = developmentBuffer.Replace("\r\n\r\n", "*").Split('*');
-                //if (mats.Length < 3) return;
+
+                List<string> metadata = new List<string>();
+
+                string[] metaStr = currentMeta.Replace("\r\n", "+").Split('+');
+                if (metaStr.Length == 0) return;
+
+                for (int i = 0; i < metaStr.Length; i++)
+                {
+                    string[] parts = metaStr[i].Split(',');
+
+                    if (i == 0) // status
+                    {
+                        metadata.Add(parts[0].Trim());
+                    }
+                    else if (parts.Length > 1)
+                    {
+                        metadata.AddRange(parts.Skip(1).Select(v => v.Trim()));
+                    }
+                }
+
                 string mat = currentMate;// mats[mats.Length - 2];
 
                 string[] rowsStr = mat.Replace("\r\n", "+").Split('+');
@@ -528,6 +532,135 @@ namespace MattressHeatmap
                 Global.IsParseBusy = false;
             }
         }
+
+        //private void ParseDevelopmentData()
+        //{
+        //    Global.IsParseBusy = true;
+        //    try
+        //    {
+        //        string currentMate = "";
+        //        string currentMetadata = "";
+        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
+        //        float dev_len = developmentBuffer.Length;
+        //        if (developmentBuffer.Length > 200000)
+        //        {
+        //            developmentBuffer = "";
+        //            return;
+        //        }
+        //        System.Diagnostics.Debug.WriteLine("========================================");
+        //        System.Diagnostics.Debug.WriteLine(developmentBuffer);
+
+        //        //int metaStart = developmentBuffer.IndexOf("Mat ");
+        //        //if (metaStart == -1)
+        //        //{
+        //        //    //developmentBuffer = ""; // אין מטאדאטה בכלל, אפשר למחוק
+        //        //    return;
+        //        //}
+
+        //        //int metaEnd = developmentBuffer.IndexOf("Row1,", metaStart);
+        //        //if (metaEnd == -1)
+        //        //{
+        //        //    // נמצא "Mat " אבל אין "Row1," → למחוק ולהמשיך
+        //        //    //developmentBuffer = developmentBuffer.Substring(metaStart + 4);
+        //        //}
+
+        //        //int dataStart = metaEnd;
+        //        //int dataEnd = developmentBuffer.IndexOf("\r\n\r\n", dataStart);
+
+        //        //if (dataEnd == -1)
+        //        //{
+        //        //    // נמצא "Row1," אבל אין סוף דאטה → למחוק ולהמשיך
+        //        //    //developmentBuffer = developmentBuffer.Substring(dataStart + 5);
+        //        //    return;
+        //        //}
+
+
+
+        //        List<string> metadata = new List<string>();
+        //        int m1 = developmentBuffer.IndexOf("Mat ");
+        //        int m2 = -1;
+        //        if (m1 >= 0)
+        //        {
+        //            m2 = developmentBuffer.IndexOf("Row1,", m1);
+        //        }
+
+        //        if (m1 >= 0 && m2 > m1)
+        //        {
+        //            currentMetadata = developmentBuffer.Substring(m1, m2 - m1);
+        //            //var d = developmentBuffer.Substring(m2);
+        //            //developmentBuffer = d;
+
+        //            string[] metaStr = currentMetadata.Replace("\r\n", "+").Split('+');
+        //            if (metaStr.Length == 0) return;
+
+        //            for (int i = 0; i < metaStr.Length; i++)
+        //            {
+        //                string[] parts = metaStr[i].Split(',');
+
+        //                if (i == 0) // status
+        //                {
+        //                    metadata.Add(parts[0].Trim());
+        //                }
+        //                else if (parts.Length > 1)
+        //                {
+        //                    metadata.AddRange(parts.Skip(1).Select(v => v.Trim()));
+        //                }
+        //            }
+        //        }
+
+        //        int m3 = -1;
+        //        int m4 = -1;
+
+        //        if (m2 >= 0)
+        //        {
+        //            //n2 = developmentBuffer.IndexOf("\r\n\r\n");
+        //            m3 = developmentBuffer.IndexOf("\r\n\r\n", m2);
+        //            m4 = developmentBuffer.IndexOf("Mat ", m2);
+        //            if (m4 != -1 & m4 < m3) m3 = m4;
+        //        }
+        //        if (m2 >= 0 && m3 > m2)
+        //        //if (n2 >= 0)
+        //        {
+        //            currentMate = developmentBuffer.Substring(m2, m3 - m2);
+        //            //var d = developmentBuffer.Substring(m3);
+        //            //developmentBuffer = d;
+        //        }
+        //        if (string.IsNullOrEmpty(currentMate))
+        //        {
+        //            if (m3 > 0)
+        //            {
+        //                var d = developmentBuffer.Substring(m3);
+        //                developmentBuffer = d;
+        //            }
+        //            else { developmentBuffer = ""; }
+        //            return;
+        //        }
+        //        //string[] mats = developmentBuffer.Replace("\r\n\r\n", "*").Split('*');
+        //        //if (mats.Length < 3) return;
+        //        string mat = currentMate;// mats[mats.Length - 2];
+
+        //        string[] rowsStr = mat.Replace("\r\n", "+").Split('+');
+        //        if (rowsStr.Length < 60) return;
+        //        List<DevelopmentDataRow> rows = new List<DevelopmentDataRow>();
+        //        for (int i = 0; i < rowsStr.Length; i++)
+        //        {
+        //            if (rowsStr[i].StartsWith("Row"))
+        //            {
+        //                rows.Add(new DevelopmentDataRow(rowsStr[i]));
+        //            }
+        //        }
+
+        //        ParseDevelopmentRows(rows);
+        //        ParseDevelopmentMeta(metadata);
+        //        developmentBuffer = "";
+        //        System.Diagnostics.Debug.WriteLine($"Buffer after reset: '{developmentBuffer}'");
+        //        System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString());
+        //    }
+        //    finally
+        //    {
+        //        Global.IsParseBusy = false;
+        //    }
+        //}
 
         private void ParseDevelopmentData2()
         {
@@ -587,19 +720,9 @@ namespace MattressHeatmap
             DataArrived_Event?.Invoke(result);
         }
 
-        private void ParseDevelopmentMeta(Dictionary<string, string> metadata)
+        private void ParseDevelopmentMeta(List<string> metadata)
         {
-            Console.WriteLine("Metadata parsed, raising event...");
-            double[,] meta = new double[10, 10];
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    meta[i, j] = i + j;
-                }
-            }
-            MetaArrived_Event?.Invoke(meta);
-            //DataArrived_Event?.Invoke(meta);
+            MetaArrived_Event?.Invoke(metadata);
         }
 
 

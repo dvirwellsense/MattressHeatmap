@@ -102,7 +102,7 @@ namespace MattressHeatmap
             ucColorRangesCaps.ColorRangesChanged_Event += UcColorRanges_ColorRangesChanged_Event;
             ucColorRangesPressures.ColorRangesChanged_Event += UcColorRanges_ColorRangesChanged_Event;
 
-            ucHeatMapMain.MetaArrived_Event += UcHeatMapMain_MetaArrived_Event;
+            ucHeatMapMain.MetaSend_Event += UcHeatMapMain_MetaArrived_Event;
 
 
             serialDeviceStatus = SerialDeviceStatus.Unavailable;
@@ -121,26 +121,36 @@ namespace MattressHeatmap
             ucHeatMapMain.ProcessBluetoothData(data);
         }
 
-        private void SerialPortDataReciever_DataArrived_Event(double[,] data)
-        {
-            if (this.InvokeRequired)
-            {
-                this.BeginInvoke(new SerialPortDataReciever.EventHandler_Data(SerialPortDataReciever_DataArrived_Event), new object[] { data });
-                return;
-            }
-            ucHeatMapMain.SetNewInputArray(data);
-        }
+        //private void SerialPortDataReciever_DataArrived_Event(double[,] data)
+        //{
+        //    if (this.InvokeRequired)
+        //    {
+        //        this.BeginInvoke(new SerialPortDataReciever.EventHandler_Data(SerialPortDataReciever_DataArrived_Event), new object[] { data });
+        //        return;
+        //    }
+        //    ucHeatMapMain.SetNewInputArray(data);
+        //}
 
-        private void UcHeatMapMain_MetaArrived_Event(double[,] metadata)
+        private void UcHeatMapMain_MetaArrived_Event(List<string> metadata)
         {
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new ucHeatMap.EventHandler_Meta(UcHeatMapMain_MetaArrived_Event), new object[] { metadata });
                 return;
             }
-
-            // Update the TextBox in Form1
-            Status_text.Text = metadata[0, 0].ToString();
+            if (metadata.Count > 0)
+            {
+                Status_text.Text = metadata[0].Substring(4);
+                Frame_text.Text = metadata[1];
+                MatNum_text.Text = metadata[2];
+                Row_text.Text = metadata[3];
+                Columns_text.Text = metadata[4];
+                Temp_text.Text = metadata[8].Remove(metadata[8].Length - 1) + "°C";
+                Humidity_text.Text = metadata[9];
+                LifeTime_text.Text = metadata[10];
+                FW_Version_text.Text = metadata[13]+","+metadata[14];
+                Frame_text.Text = metadata[1];
+            }
         }
 
 
@@ -508,20 +518,35 @@ namespace MattressHeatmap
 
         private void UpdateComboPortsItems()
         {
-            
             string[] availablePorts = SerialPort.GetPortNames();
             string selectedValue = comboPorts.SelectedIndex == -1 ? "" : comboPorts.Items[comboPorts.SelectedIndex].ToString();
 
             comboPorts.Items.Clear();
 
-            for (int i = 0; i < availablePorts.Length; i++)
+            // Add all available ports to the combo box
+            foreach (string port in availablePorts)
             {
-                comboPorts.Items.Add(availablePorts[i]);
+                comboPorts.Items.Add(port);
             }
 
-            if (!selectedValue.Equals("") && availablePorts.Contains(selectedValue)) comboPorts.SelectedIndex = comboPorts.Items.IndexOf(selectedValue);
-            else comboPorts.Text = "";
+            if (availablePorts.Length == 1)
+            {
+                // If there is only one port, select it automatically
+                comboPorts.SelectedIndex = 0;
+            }
+            else if (!string.IsNullOrEmpty(selectedValue) && availablePorts.Contains(selectedValue))
+            {
+                // If the previously selected port is still available, keep it selected
+                comboPorts.SelectedIndex = comboPorts.Items.IndexOf(selectedValue);
+            }
+            else
+            {
+                // If no selection is possible, clear the combo box selection
+                comboPorts.Text = "";
+            }
         }
+
+
 
         private SerialDeviceStatus ConnectToDeviceIfAvailable()
         {

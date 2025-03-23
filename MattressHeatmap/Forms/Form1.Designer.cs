@@ -834,7 +834,7 @@
             this.ucHeatMapMain.Name = "ucHeatMapMain";
             this.ucHeatMapMain.ranges = new string[0];
             this.ucHeatMapMain.ScaleMultiplier = 1D;
-            this.ucHeatMapMain.Size = new System.Drawing.Size(770, 375);
+            this.ucHeatMapMain.Size = new System.Drawing.Size(783, 380);
             this.ucHeatMapMain.SmoothImage = false;
             this.ucHeatMapMain.StartChar = '<';
             this.ucHeatMapMain.StretchDirection = MattressHeatmap.StretchDirection.Vertical;

@@ -70,6 +70,38 @@ namespace MattressHeatmap
         int indexMessage;
         int indexMessageEnd;
 
+        string ExtractMetadata(string message)
+        {
+            if (message.Contains("Mat "))
+            {
+                int start = message.IndexOf("Mat ");
+                if (start != -1)
+                {
+                    int end = message.IndexOf("Row1,", start);
+                    if (end > start)
+                        return message.Substring(start, end - start);
+                }
+            }
+            return string.Empty;
+        }
+
+
+        string ExtractData(string message)
+        {
+            if (message.Contains("Row1,"))
+            {
+                int start = message.IndexOf("Row1,");
+                if (start != -1)
+                {
+                    int end = message.IndexOf("Mat", start);
+                    if (end > start)
+                        return message.Substring(start, end - start);
+                    else return message.Substring(start);
+                }
+            }
+            return string.Empty;
+        }
+
         void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             try
@@ -86,7 +118,6 @@ namespace MattressHeatmap
                         nbrDataRead = _serialPort.Read(data, 0, dataLength);
                         msg = System.Text.Encoding.Default.GetString(data);
                         DataArrived_Event?.Invoke(msg);
-                        MetaArrived_Event?.Invoke(msg);
                         //if (RxBuffer.Length > 1000) RxBuffer = "";
                         //if (RxBuffer.Contains('\n'))
                         //{
@@ -104,6 +135,7 @@ namespace MattressHeatmap
             }
             catch (Exception ex) { };
         }
+
 
         /// <summary>
         /// Closes the serial port

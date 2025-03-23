@@ -121,14 +121,14 @@ namespace MattressHeatmap
         public delegate void EventHandler_ConnectionType(ConnectionType connectionType);
         public delegate void EventHandler_Frame(Frame frame);
         public delegate void EventHandler_Void();
-        public delegate void EventHandler_Meta(double[,] metadata);
+        public delegate void EventHandler_Meta(List<string> metadata);
 
         public event EventHandler_Size SizeChanged_Event;
         public event EventHandler_ConnectionType ConnectionTypeChanged_Event;
         public event EventHandler_Void GotBluetoothDetails_Event;
         public event EventHandler_Frame SelectedFrameArrived_Event;
         public event EventHandler_Void SerialPortClosed_Event;
-        public event EventHandler_Meta MetaArrived_Event;
+        public event EventHandler_Meta MetaSend_Event;
 
 
         public string[] ranges
@@ -303,7 +303,7 @@ namespace MattressHeatmap
             if (serialPortDataReciever.IsInProgress()) SetConnectionType(ConnectionType.Serial);
         }
 
-        private void SerialPortDataReciever_MetaArrived_Event(double[,] metadata)
+        private void SerialPortDataReciever_MetaArrived_Event(List<string> metadata)
         {
             if (this.InvokeRequired)
             {
@@ -312,7 +312,7 @@ namespace MattressHeatmap
             }
 
             // Raise the event so Form1 can listen to it
-            MetaArrived_Event?.Invoke(metadata);
+            MetaSend_Event?.Invoke(metadata);
         }
 
 
