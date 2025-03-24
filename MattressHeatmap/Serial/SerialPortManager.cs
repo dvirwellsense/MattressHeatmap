@@ -22,7 +22,6 @@ namespace MattressHeatmap
         //        public event Global.EventHandler_TesterMsg DataArrived_Event;
         public event EventHandler_string SendOutMsg_Event;
         public event EventHandler_string DataArrived_Event;
-        public event EventHandler_string MetaArrived_Event;
         //public event Global.EventHandler_MachineState DataArrived_Event;
         // public event Global.EventHandler_string MessageArrived_Event;
 
@@ -176,7 +175,6 @@ namespace MattressHeatmap
             {
                 msg = msg + "\r\n";
                 _serialPort.Write(msg);
-                SendOutMsg_Event?.Invoke(msg);
             }
         }
     }

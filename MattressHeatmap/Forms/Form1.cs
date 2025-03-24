@@ -36,6 +36,9 @@ namespace MattressHeatmap
         private frmSampling samplingForm;
         private bool isDisconnectedByUI = false;
 
+        public delegate void EventHandler_HeatmapData(string data);
+        public event EventHandler_HeatmapData HeatmapDataGenerated_Event;
+
         public Form1()
         {
             InitializeComponent();
@@ -104,6 +107,7 @@ namespace MattressHeatmap
 
             ucHeatMapMain.MetaSend_Event += UcHeatMapMain_MetaArrived_Event;
 
+            HeatmapDataGenerated_Event += ucHeatMapMain.SetNewInputString;
 
             serialDeviceStatus = SerialDeviceStatus.Unavailable;
 
@@ -1005,6 +1009,16 @@ namespace MattressHeatmap
         private void numTau_ValueChanged(object sender, EventArgs e)
         {
             ucHeatMapMain.SetTauAdjustmentValue((double)numTau.Value);
+        }
+
+        private void SendText_Click(object sender, EventArgs e)
+        {
+            string textToSend = SendBox.Text;
+            if (!string.IsNullOrWhiteSpace(textToSend))
+            {
+                HeatmapDataGenerated_Event?.Invoke(textToSend);
+                SendBox.Text = "";
+            }
         }
     }
 }

@@ -130,6 +130,8 @@ namespace MattressHeatmap
         public event EventHandler_Void SerialPortClosed_Event;
         public event EventHandler_Meta MetaSend_Event;
 
+        public delegate void EventHandler_ProcessedHeatmap(string processedData);
+        public event EventHandler_ProcessedHeatmap HeatmapDataUpdated_Event;
 
         public string[] ranges
         {
@@ -266,6 +268,8 @@ namespace MattressHeatmap
             bluetoothDataProcessor = new BluetoothDataProcessor();
             bluetoothDataProcessor.BluetoothMatArrived_Event += BluetoothDataProcessor_BluetoothMatArrived_Event;
             bluetoothDataProcessor.GotDetails_Event += BluetoothDataProcessor_GotDetails_Event;
+
+            HeatmapDataUpdated_Event += serialPortDataReciever.SendHeatmapData;
         }
 
         private void BluetoothDataProcessor_GotDetails_Event()
@@ -345,6 +349,11 @@ namespace MattressHeatmap
             if (selectedArea != null) SelectedFrameArrived_Event?.Invoke(GetSelectedAreaFrame());
 
             LoadHeatMap();
+        }
+
+        public void SetNewInputString(string newInputString)
+        {
+            HeatmapDataUpdated_Event?.Invoke(newInputString);
         }
 
         public void SetNewScale(double newScale)

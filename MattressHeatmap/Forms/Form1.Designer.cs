@@ -110,6 +110,8 @@
             this.Columns = new System.Windows.Forms.Label();
             this.FW_Version_text = new System.Windows.Forms.TextBox();
             this.FW_Version = new System.Windows.Forms.Label();
+            this.SendText = new System.Windows.Forms.Button();
+            this.SendBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
@@ -647,7 +649,7 @@
             // 
             this.btnSetOffset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSetOffset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSetOffset.Location = new System.Drawing.Point(12, 810);
+            this.btnSetOffset.Location = new System.Drawing.Point(12, 958);
             this.btnSetOffset.Name = "btnSetOffset";
             this.btnSetOffset.Size = new System.Drawing.Size(213, 50);
             this.btnSetOffset.TabIndex = 47;
@@ -659,7 +661,7 @@
             // 
             this.btnCancelOffset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelOffset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnCancelOffset.Location = new System.Drawing.Point(231, 810);
+            this.btnCancelOffset.Location = new System.Drawing.Point(231, 958);
             this.btnCancelOffset.Name = "btnCancelOffset";
             this.btnCancelOffset.Size = new System.Drawing.Size(213, 50);
             this.btnCancelOffset.TabIndex = 48;
@@ -671,7 +673,7 @@
             // 
             this.btnSample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSample.Location = new System.Drawing.Point(1215, 810);
+            this.btnSample.Location = new System.Drawing.Point(1215, 958);
             this.btnSample.Name = "btnSample";
             this.btnSample.Size = new System.Drawing.Size(213, 50);
             this.btnSample.TabIndex = 49;
@@ -727,7 +729,7 @@
             this.panelColorRanges.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelColorRanges.Location = new System.Drawing.Point(1434, 0);
             this.panelColorRanges.Name = "panelColorRanges";
-            this.panelColorRanges.Size = new System.Drawing.Size(396, 872);
+            this.panelColorRanges.Size = new System.Drawing.Size(396, 1020);
             this.panelColorRanges.TabIndex = 33;
             // 
             // ucColorRangesPressures
@@ -759,7 +761,7 @@
             // 
             this.btnSimulate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSimulate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSimulate.Location = new System.Drawing.Point(1329, 754);
+            this.btnSimulate.Location = new System.Drawing.Point(1329, 902);
             this.btnSimulate.Name = "btnSimulate";
             this.btnSimulate.Size = new System.Drawing.Size(99, 50);
             this.btnSimulate.TabIndex = 50;
@@ -771,7 +773,7 @@
             // 
             this.btnToggleBlur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnToggleBlur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnToggleBlur.Location = new System.Drawing.Point(1045, 810);
+            this.btnToggleBlur.Location = new System.Drawing.Point(1045, 958);
             this.btnToggleBlur.Name = "btnToggleBlur";
             this.btnToggleBlur.Size = new System.Drawing.Size(59, 50);
             this.btnToggleBlur.TabIndex = 51;
@@ -785,7 +787,7 @@
             this.checkTau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkTau.AutoSize = true;
             this.checkTau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkTau.Location = new System.Drawing.Point(1052, 827);
+            this.checkTau.Location = new System.Drawing.Point(1052, 975);
             this.checkTau.Name = "checkTau";
             this.checkTau.Size = new System.Drawing.Size(64, 24);
             this.checkTau.TabIndex = 52;
@@ -803,7 +805,7 @@
             0,
             0,
             65536});
-            this.numTau.Location = new System.Drawing.Point(1122, 824);
+            this.numTau.Location = new System.Drawing.Point(1122, 972);
             this.numTau.Maximum = new decimal(new int[] {
             1,
             0,
@@ -834,7 +836,7 @@
             this.ucHeatMapMain.Name = "ucHeatMapMain";
             this.ucHeatMapMain.ranges = new string[0];
             this.ucHeatMapMain.ScaleMultiplier = 1D;
-            this.ucHeatMapMain.Size = new System.Drawing.Size(783, 380);
+            this.ucHeatMapMain.Size = new System.Drawing.Size(795, 386);
             this.ucHeatMapMain.SmoothImage = false;
             this.ucHeatMapMain.StartChar = '<';
             this.ucHeatMapMain.StretchDirection = MattressHeatmap.StretchDirection.Vertical;
@@ -1004,11 +1006,30 @@
             this.FW_Version.TabIndex = 107;
             this.FW_Version.Text = "FW_Version:";
             // 
+            // SendText
+            // 
+            this.SendText.Location = new System.Drawing.Point(462, 923);
+            this.SendText.Name = "SendText";
+            this.SendText.Size = new System.Drawing.Size(124, 50);
+            this.SendText.TabIndex = 108;
+            this.SendText.Text = "Send";
+            this.SendText.UseVisualStyleBackColor = true;
+            this.SendText.Click += new System.EventHandler(this.SendText_Click);
+            // 
+            // SendBox
+            // 
+            this.SendBox.Location = new System.Drawing.Point(615, 943);
+            this.SendBox.Name = "SendBox";
+            this.SendBox.Size = new System.Drawing.Size(390, 22);
+            this.SendBox.TabIndex = 109;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1830, 872);
+            this.ClientSize = new System.Drawing.Size(1830, 1020);
+            this.Controls.Add(this.SendBox);
+            this.Controls.Add(this.SendText);
             this.Controls.Add(this.FW_Version);
             this.Controls.Add(this.FW_Version_text);
             this.Controls.Add(this.Columns);
@@ -1165,6 +1186,8 @@
         private System.Windows.Forms.Label Columns;
         private System.Windows.Forms.TextBox FW_Version_text;
         private System.Windows.Forms.Label FW_Version;
+        private System.Windows.Forms.Button SendText;
+        private System.Windows.Forms.TextBox SendBox;
     }
 }
 
