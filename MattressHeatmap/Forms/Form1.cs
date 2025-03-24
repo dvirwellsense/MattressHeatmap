@@ -27,7 +27,6 @@ namespace MattressHeatmap
         private StreamInputSimulator streamSimulator;
         private Random rnd;
         private bool isSerialSimulatorRunning;
-        //private SerialPortDataReciever serialPortReceiver;
         private int heatmapStartLocationX;
         private SerialDeviceStatus serialDeviceStatus;
         private Area samplingArea;
@@ -124,16 +123,6 @@ namespace MattressHeatmap
 
             ucHeatMapMain.ProcessBluetoothData(data);
         }
-
-        //private void SerialPortDataReciever_DataArrived_Event(double[,] data)
-        //{
-        //    if (this.InvokeRequired)
-        //    {
-        //        this.BeginInvoke(new SerialPortDataReciever.EventHandler_Data(SerialPortDataReciever_DataArrived_Event), new object[] { data });
-        //        return;
-        //    }
-        //    ucHeatMapMain.SetNewInputArray(data);
-        //}
 
         private void UcHeatMapMain_MetaArrived_Event(List<string> metadata)
         {
