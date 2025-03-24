@@ -60,6 +60,8 @@ namespace MattressHeatmap
 
         public static int MAX_VALUE = 500; //65535
 
+        private static readonly double[] ReferenceCapacitors = { 5e-12, 10e-12, 15e-12 };
+
         public SerialPortDataReciever(string comPort)
         {
             ComPort = comPort;
@@ -444,7 +446,7 @@ namespace MattressHeatmap
             Global.IsParseBusy = true;
             try
             {
-                //System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + "   " + developmentBuffer.Length.ToString());
+                
                 if (developmentBuffer.Length > 8000)
                 {
                     int k = 1;
@@ -454,23 +456,26 @@ namespace MattressHeatmap
                     developmentBuffer = "";
                     return;
                 }
-                //System.Diagnostics.Debug.WriteLine("========================================");
-                //System.Diagnostics.Debug.WriteLine(developmentBuffer);
 
-                int metaStart = developmentBuffer.IndexOf("Mat ");
+                int metaStart = -1;
+                int metaEnd = -1;
+                int dataStart = -1;
+                int dataEnd = -1;
+
+                metaStart = developmentBuffer.IndexOf("Mat ");
                 if (metaStart == -1)
                 {
                     return;
                 }
 
-                int metaEnd = developmentBuffer.IndexOf("Row1,", metaStart);
+                metaEnd = developmentBuffer.IndexOf("Row1,", metaStart);
                 if (metaEnd == -1)
                 {
                     return;
                 }
 
-                int dataStart = metaEnd;
-                int dataEnd = developmentBuffer.IndexOf("\r\n\r\n", dataStart);
+                dataStart = metaEnd;
+                dataEnd = developmentBuffer.IndexOf("\r\n\r\n", dataStart);
 
                 if (dataEnd == -1)
                 {
@@ -571,20 +576,66 @@ namespace MattressHeatmap
             }
         }
 
+        //private void ParseDevelopmentRows(List<DevelopmentDataRow> rows)
+        //{
+        //    if (!CheckDevelopmentRows(rows)) return;
+
+        //    double[,] result = new double[rows.Count, rows[0].Values.Count];
+        //    for (int i = 0; i < result.GetLength(0); i++)
+        //    {
+        //        for (int j = 0; j < result.GetLength(1); j++)
+        //        {
+        //            result[i, j] = GetDoubleValue(rows[i].Values[j]);
+        //        }
+        //    }
+        //    DataArrived_Event?.Invoke(result);
+        //}
+
         private void ParseDevelopmentRows(List<DevelopmentDataRow> rows)
         {
             if (!CheckDevelopmentRows(rows)) return;
 
-            double[,] result = new double[rows.Count, rows[0].Values.Count];
-            for (int i = 0; i < result.GetLength(0); i++)
+            int numRows = rows.Count;
+            int numCols = rows[0].Values.Count;
+
+            double[,] result = new double[numRows, numCols];
+
+            if (!Global.IsManual)
             {
-                for (int j = 0; j < result.GetLength(1); j++)
+                for (int i = 0; i < numRows; i++)
                 {
-                    result[i, j] = GetDoubleValue(rows[i].Values[j]);
+                    double[] x = new double[3];
+                    double[] y = new double[3];
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        x[j] = rows[i].Values[30 + j];
+                        y[j] = ReferenceCapacitors[j];
+                    }
+
+                    var (a, b, c) = FitQuadratic(x, y);
+
+                    for (int j = 0; j < numCols; j++)
+                    {
+                        double measuredValue = rows[i].Values[j];
+                        result[i, j] = a * measuredValue * measuredValue + b * measuredValue + c;
+                    }
                 }
             }
+            else
+            {
+                for (int i = 0; i < result.GetLength(0); i++)
+                {
+                    for (int j = 0; j < result.GetLength(1); j++)
+                    {
+                        result[i, j] = GetDoubleValue(rows[i].Values[j]);
+                    }
+                }
+            }
+
             DataArrived_Event?.Invoke(result);
         }
+
 
         private void ParseDevelopmentMeta(List<string> metadata)
         {
@@ -796,6 +847,69 @@ namespace MattressHeatmap
         public int GetRowsCount()
         {
             return rowsBuffer.Count;
+        }
+
+        public static (double a, double b, double c) FitQuadratic(double[] x, double[] y)
+        {
+            int n = 3;
+
+            double sumX = x.Sum();
+            double sumX2 = x.Select(v => v * v).Sum();
+            double sumX3 = x.Select(v => v * v * v).Sum();
+            double sumX4 = x.Select(v => v * v * v * v).Sum();
+            double sumY = y.Sum();
+            double sumXY = x.Zip(y, (xi, yi) => xi * yi).Sum();
+            double sumX2Y = x.Zip(y, (xi, yi) => xi * xi * yi).Sum();
+
+            double[,] A = {
+            { n, sumX, sumX2 },
+            { sumX, sumX2, sumX3 },
+            { sumX2, sumX3, sumX4 }
+        };
+            double[] B = { sumY, sumXY, sumX2Y };
+
+            return SolveLinearSystem(A, B);
+        }
+
+        private static (double a, double b, double c) SolveLinearSystem(double[,] A, double[] B)
+        {
+            int n = B.Length;
+            double[] X = new double[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                int maxRow = i;
+                for (int k = i + 1; k < n; k++)
+                    if (Math.Abs(A[k, i]) > Math.Abs(A[maxRow, i])) maxRow = k;
+
+                for (int k = i; k < n; k++)
+                {
+                    double tmp = A[maxRow, k];
+                    A[maxRow, k] = A[i, k];
+                    A[i, k] = tmp;
+                }
+
+                double tmpB = B[maxRow];
+                B[maxRow] = B[i];
+                B[i] = tmpB;
+
+                for (int k = i + 1; k < n; k++)
+                {
+                    double factor = A[k, i] / A[i, i];
+                    B[k] -= factor * B[i];
+                    for (int j = i; j < n; j++)
+                        A[k, j] -= factor * A[i, j];
+                }
+            }
+
+            for (int i = n - 1; i >= 0; i--)
+            {
+                X[i] = B[i] / A[i, i];
+                for (int k = 0; k < i; k++)
+                    B[k] -= A[k, i] * X[i];
+            }
+
+            return (X[2], X[1], X[0]);
         }
 
         public void SendHeatmapData(string data)

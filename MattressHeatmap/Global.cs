@@ -21,6 +21,7 @@ namespace MattressHeatmap
         public static double DevelopmentB;
         public static double DevelopmentC;
         public static bool IsParseBusy = false;
+        public static bool IsManual = false;
 
         public static BluetoothDevice GetDeviceById(string id)
         {

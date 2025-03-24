@@ -26,7 +26,7 @@ namespace MattressHeatmap
             txtC.Text = Properties.Settings.Default.DevelopmentDefaultC.ToString();
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void btnManual_Click(object sender, EventArgs e)
         {
             if (txtA.Text.Equals("") || txtB.Text.Equals("") || txtC.Text.Equals(""))
             {
@@ -44,6 +44,7 @@ namespace MattressHeatmap
 
             if (isAValid && isBValid && isCValid)
             {
+                Global.IsManual = true;
                 Global.DevelopmentA = a;
                 Global.DevelopmentB = b;
                 Global.DevelopmentC = c;
@@ -68,6 +69,13 @@ namespace MattressHeatmap
         private void txtA_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAuto_Click(object sender, EventArgs e)
+        {
+            Global.IsManual = false;
+            Close();
+            MainForm.StartDevelopment();
         }
     }
 }
