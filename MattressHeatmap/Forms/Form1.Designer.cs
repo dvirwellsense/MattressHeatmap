@@ -112,6 +112,7 @@
             this.FW_Version = new System.Windows.Forms.Label();
             this.SendText = new System.Windows.Forms.Button();
             this.SendBox = new System.Windows.Forms.TextBox();
+            this.Version = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
@@ -836,7 +837,7 @@
             this.ucHeatMapMain.Name = "ucHeatMapMain";
             this.ucHeatMapMain.ranges = new string[0];
             this.ucHeatMapMain.ScaleMultiplier = 1D;
-            this.ucHeatMapMain.Size = new System.Drawing.Size(795, 386);
+            this.ucHeatMapMain.Size = new System.Drawing.Size(801, 389);
             this.ucHeatMapMain.SmoothImage = false;
             this.ucHeatMapMain.StartChar = '<';
             this.ucHeatMapMain.StretchDirection = MattressHeatmap.StretchDirection.Vertical;
@@ -1008,9 +1009,9 @@
             // 
             // SendText
             // 
-            this.SendText.Location = new System.Drawing.Point(462, 923);
+            this.SendText.Location = new System.Drawing.Point(450, 922);
             this.SendText.Name = "SendText";
-            this.SendText.Size = new System.Drawing.Size(124, 50);
+            this.SendText.Size = new System.Drawing.Size(213, 50);
             this.SendText.TabIndex = 108;
             this.SendText.Text = "Send";
             this.SendText.UseVisualStyleBackColor = true;
@@ -1018,16 +1019,31 @@
             // 
             // SendBox
             // 
-            this.SendBox.Location = new System.Drawing.Point(615, 943);
+            this.SendBox.AcceptsReturn = true;
+            this.SendBox.AcceptsTab = true;
+            this.SendBox.Location = new System.Drawing.Point(669, 922);
+            this.SendBox.Multiline = true;
             this.SendBox.Name = "SendBox";
-            this.SendBox.Size = new System.Drawing.Size(390, 22);
+            this.SendBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SendBox.Size = new System.Drawing.Size(390, 50);
             this.SendBox.TabIndex = 109;
+            // 
+            // Version
+            // 
+            this.Version.AutoSize = true;
+            this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Version.Location = new System.Drawing.Point(4, 4);
+            this.Version.Name = "Version";
+            this.Version.Size = new System.Drawing.Size(53, 25);
+            this.Version.TabIndex = 110;
+            this.Version.Text = "V1.0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1830, 1020);
+            this.Controls.Add(this.Version);
             this.Controls.Add(this.SendBox);
             this.Controls.Add(this.SendText);
             this.Controls.Add(this.FW_Version);
@@ -1188,6 +1204,7 @@
         private System.Windows.Forms.Label FW_Version;
         private System.Windows.Forms.Button SendText;
         private System.Windows.Forms.TextBox SendBox;
+        private System.Windows.Forms.Label Version;
     }
 }
 
